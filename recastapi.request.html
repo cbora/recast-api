@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>recastapi.request package &mdash; recastapi 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="recastapi 0.1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="recastapi-request-package">
+<h1>recastapi.request package<a class="headerlink" href="#recastapi-request-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recastapi.request.get">
+<span id="recastapi-request-get-module"></span><h2>recastapi.request.get module<a class="headerlink" href="#module-recastapi.request.get" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.request.get.archives">
+<code class="descname">archives</code><span class="sig-paren">(</span><em>request_id</em>, <em>parameter_index=0</em>, <em>basic_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.archives" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of files given the request id and parameter index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request</li>
+<li><strong>parameter_index</strong> &#8211; index of the parameter</li>
+<li><strong>basic_index</strong> &#8211; index of the basic request</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object <cite>or</cite> list if basic_index is None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.coordinate">
+<code class="descname">coordinate</code><span class="sig-paren">(</span><em>request_id</em>, <em>parameter_index=0</em>, <em>coordinate_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of coordinates given a parameter index and request_id               or single coordinate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request</li>
+<li><strong>parameter_index</strong> &#8211; index of the parameter</li>
+<li><strong>coordinate_index</strong> &#8211; index of the coordinate.
+<cite>if</cite> none given returns list of coordinate</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>request_id</em>, <em>point_request_index=0</em>, <em>basic_request_index=0</em>, <em>download_path=None</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads file associated with a given request, index through point and basic requests.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request.</li>
+<li><strong>point_request_index</strong> &#8211; index of the point request 0..N-1.</li>
+<li><strong>basic_request_index</strong> &#8211; index of basic request 0..M-1.</li>
+<li><strong>dry_run</strong> &#8211; whether to download file or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with metadata of files downloaded on disk.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.download_all">
+<code class="descname">download_all</code><span class="sig-paren">(</span><em>request_id</em>, <em>download_path=None</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.download_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads all files associated with a given request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request to query.</li>
+<li><strong>download_path</strong> &#8211; Filename of the files(still have to come up with logical)
+naming convention. Currently, files are downloaded with their original
+file name in the current directory</li>
+<li><strong>dry_run</strong> &#8211; whether to download file or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with metadata of files downloaded on disk</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.download_file">
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>basic_request_id</em>, <em>download_path=None</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Worker function that actually downloads file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>basic_request_id</strong> &#8211; ID of the basic request associated with a file.</li>
+<li><strong>donwload_path</strong> &#8211; User specified download path(optional), if not
+provided, file takes original file_name.</li>
+<li><strong>dry_run</strong> &#8211; whether to download file or not. If false link of file provided
+in response object</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object containing the metadata of the file, and file downloaded saved on disk.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.get_coordinate">
+<code class="descname">get_coordinate</code><span class="sig-paren">(</span><em>point_request_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.get_coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private function</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.parameter">
+<code class="descname">parameter</code><span class="sig-paren">(</span><em>request_id</em>, <em>parameter_index=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of parameters or single parameter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>request_id</strong> &#8211; the request ID to query</li>
+<li><strong>parameter_index</strong> &#8211; starting from 0</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>query=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>function for customized query</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>uuid=None</em>, <em>analysis_id=None</em>, <em>query='?max_results=1000&amp;page=1'</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.request" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>List request depending on criteria</dt>
+<dd>If all variables are none all requests returned</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uuid</strong> &#8211; ID of the request(optional)</li>
+<li><strong>analysis_id</strong> &#8211; Analysis ID to query. Returns all requests associated to the analysis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.tree">
+<code class="descname">tree</code><span class="sig-paren">(</span><em>request_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.tree" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Prints request tree, including the number of </dt>
+<dd>coordinates for each parameter</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request_id</strong> &#8211; ID of the request</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.get.user_request">
+<code class="descname">user_request</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.get.user_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-recastapi.request.post">
+<span id="recastapi-request-post-module"></span><h2>recastapi.request.post module<a class="headerlink" href="#module-recastapi.request.post" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.request.post.basic_request">
+<code class="descname">basic_request</code><span class="sig-paren">(</span><em>point_request_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.basic_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds basic request</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>point_request_id</strong> &#8211; ID of the point request</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">JSON object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.coordinate">
+<code class="descname">coordinate</code><span class="sig-paren">(</span><em>parameter_id</em>, <em>coordinate_name</em>, <em>coordinate_value</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.coordinate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds coordinate given parameter id.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>parameter_id</strong> &#8211; analogous to point_request_id.</li>
+<li><strong>coordinate_value</strong> &#8211; value of the coordinate.</li>
+<li><strong>coordinate_name</strong> &#8211; name of the coordinate.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with added data</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.coordinate_by_index">
+<code class="descname">coordinate_by_index</code><span class="sig-paren">(</span><em>request_id</em>, <em>parameter_index</em>, <em>coordinate_name</em>, <em>coordinate_value</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.coordinate_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds coordinate to a give parameter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; request ID</li>
+<li><strong>parameter_index</strong> &#8211; value of the coordinate</li>
+<li><strong>coordinate_name</strong> &#8211; name of the coordinate</li>
+<li><strong>coordinate_value</strong> &#8211; value</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.parameter">
+<code class="descname">parameter</code><span class="sig-paren">(</span><em>request_id</em>, <em>coordinate_value=None</em>, <em>coordinate_title=None</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.parameter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a parameter point to a request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request to be associated to this parameter point.</li>
+<li><strong>coordinate_value</strong> &#8211; Value of the scan coordinate.</li>
+<li><strong>parameter_title</strong> &#8211; Optional title of the scan title.</li>
+<li><strong>filename</strong> &#8211; Optional file path to file to associate to this parameter point.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with data added</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.point_request">
+<code class="descname">point_request</code><span class="sig-paren">(</span><em>request_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.point_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds point request</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request_id</strong> &#8211; ID of the request.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">JSON object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>analysis_id</em>, <em>title</em>, <em>description_model</em>, <em>reason_for_request</em>, <em>additional_information</em>, <em>status='Incomplete'</em>, <em>file_path=None</em>, <em>parameter_value=None</em>, <em>parameter_title=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new request</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>analysis_id</strong> &#8211; ID of the analysis.</li>
+<li><strong>description_model</strong> &#8211; Detailed description of the model to use.</li>
+<li><strong>reason_for_request</strong> &#8211; Reason for submitting this request.</li>
+<li><strong>additional_information</strong> &#8211; Any other additional information associated to this request.</li>
+<li><strong>status</strong> &#8211; Defaults to Incomplete.</li>
+<li><strong>file_path</strong> &#8211; File to be associated with this request, optional variable.</li>
+<li><strong>parameter_value</strong> &#8211; Value of the scan parameter, optional.</li>
+<li><strong>parameter_title</strong> &#8211; Optional title of the parameter title.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with data added</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.update_status">
+<code class="descname">update_status</code><span class="sig-paren">(</span><em>request_id</em>, <em>status</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.update_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates status of the request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request_id</strong> &#8211; ID of the request to be updated</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">JSON object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.upload_file">
+<code class="descname">upload_file</code><span class="sig-paren">(</span><em>parameter_id</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads zip file and associates it with a request and basic request.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request to be associated to this file.</li>
+<li><strong>basic_request_id</strong> &#8211; ID of the basic request to be asso</li>
+<li><strong>filename</strong> &#8211; Path to file to be uploaded.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.request.post.upload_file_by_index">
+<code class="descname">upload_file_by_index</code><span class="sig-paren">(</span><em>request_id</em>, <em>parameter_index</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.request.post.upload_file_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads zip file given the parameter index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>request_id</strong> &#8211; ID of the request</li>
+<li><strong>parameter_index</strong> &#8211; index of the parameter</li>
+<li><strong>filename</strong> &#8211; file to upload. Must be zip format</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recastapi.request">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-recastapi.request" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">recastapi.request package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-recastapi.request.get">recastapi.request.get module</a></li>
+<li><a class="reference internal" href="#module-recastapi.request.post">recastapi.request.post module</a></li>
+<li><a class="reference internal" href="#module-recastapi.request">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/recastapi.request.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christian Bora.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/recastapi.request.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

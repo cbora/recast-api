@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>recastapi.response package &mdash; recastapi 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="recastapi 0.1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="recastapi-response-package">
+<h1>recastapi.response package<a class="headerlink" href="#recastapi-response-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recastapi.response.get">
+<span id="recastapi-response-get-module"></span><h2>recastapi.response.get module<a class="headerlink" href="#module-recastapi.response.get" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.response.get.download">
+<code class="descname">download</code><span class="sig-paren">(</span><em>response_id</em>, <em>point_response_index=0</em>, <em>basic_response_index=0</em>, <em>download_path=None</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.get.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads file associated with a given request, indexed through point and basic responses.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>response_id</strong> &#8211; ID of the response.</li>
+<li><strong>point_response_index</strong> &#8211; index of the point request 0..N-1.</li>
+<li><strong>basic_response_index</strong> &#8211; index of the basic request 0..M-1.</li>
+<li><strong>download_path</strong> &#8211; User specified download filename <cite>if</cite> none keeps original name</li>
+<li><strong>dry_run</strong> &#8211; whether to download file or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object with metadata of files downloaded on disk.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.get.download_file">
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>basic_response_id</em>, <em>download_path=None</em>, <em>dry_run=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.get.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downloads response file to user specified path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>basic_response_id</strong> &#8211; ID of the basic response</li>
+<li><strong>download_path</strong> &#8211; Used specified filename</li>
+<li><strong>dry_run</strong> &#8211; whether to download file or not</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.get.response">
+<code class="descname">response</code><span class="sig-paren">(</span><em>uuid=None</em>, <em>request_id=None</em>, <em>query='?max_results=1000&amp;page=1'</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.get.response" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>List response depending on criteria.</dt>
+<dd>If all args are None alll responses returned.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uuid</strong> &#8211; Response ID to query(optional). Returns a single request with the ID</li>
+<li><strong>request_id</strong> &#8211; Request ID of request to query(optional). Returns request
+associated to response</li>
+<li><strong>query</strong> &#8211; additional query</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.get.tree">
+<code class="descname">tree</code><span class="sig-paren">(</span><em>response_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.get.tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints response tree, nested with point and basic response.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>response_id</strong> &#8211; ID of the response</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.get.user_response">
+<code class="descname">user_response</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.get.user_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists all responses associated to a user.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recastapi.response.post">
+<span id="recastapi-response-post-module"></span><h2>recastapi.response.post module<a class="headerlink" href="#module-recastapi.response.post" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.response.post.basic_response">
+<code class="descname">basic_response</code><span class="sig-paren">(</span><em>yaml_file</em>, <em>point_response_id</em>, <em>basic_request_id</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.basic_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>&#8221; Adds and associtate basic response to parameter response</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>yaml_file</strong> &#8211; file containing data of the basic response</li>
+<li><strong>point_response_id</strong> &#8211; parameter response ID</li>
+<li><strong>basic_request_id</strong> &#8211; index of the basic request</li>
+<li><strong>filename</strong> &#8211; file associated to basic response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.post.basic_response_by_index">
+<code class="descname">basic_response_by_index</code><span class="sig-paren">(</span><em>yaml_file</em>, <em>request_id</em>, <em>parameter_index</em>, <em>basic_index</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.basic_response_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add basic response given the request id, parameter index, and basic index</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>yaml_file</strong> &#8211; file containing basic response data</li>
+<li><strong>request_id</strong> &#8211; associate request id</li>
+<li><strong>parameter_index</strong> &#8211; index of the parameter</li>
+<li><strong>basic_index</strong> &#8211; index of the basic response</li>
+<li><strong>filename</strong> &#8211; file associated to the basic response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.post.parameter_response">
+<code class="descname">parameter_response</code><span class="sig-paren">(</span><em>yaml_file</em>, <em>scan_response_id</em>, <em>point_request_id</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.parameter_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>adds and associates parameter to response and request</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>yaml_file</strong> &#8211; file containing parameter response data</li>
+<li><strong>scan_response_id</strong> &#8211; ID of the response</li>
+<li><strong>point_request_id</strong> &#8211; ID of the point request</li>
+<li><strong>filename</strong> &#8211; filename associtated to the parameter. Must be <a href="#id1"><span class="problematic" id="id2">*</span></a>.zip</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.post.parameter_response_by_index">
+<code class="descname">parameter_response_by_index</code><span class="sig-paren">(</span><em>yaml_file</em>, <em>request_id</em>, <em>parameter_index</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.parameter_response_by_index" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Adds Point response/Parameter response given the request id and parameter index</dt>
+<dd>index with reference from 0</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>yaml_file</strong> &#8211; file containing the data of the response</li>
+<li><strong>request_id</strong> &#8211; request id</li>
+<li><strong>parameter_index</strong> &#8211; index of the parameter</li>
+<li><strong>filename</strong> &#8211; filename associated to the parameter</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.post.response">
+<code class="descname">response</code><span class="sig-paren">(</span><em>request_id</em>, <em>model_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>create response.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request_id</strong> &#8211; ID of the request</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">JSON object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.response.post.upload_file">
+<code class="descname">upload_file</code><span class="sig-paren">(</span><em>filename</em>, <em>point_response_id=None</em>, <em>basic_response_id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.response.post.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uploads response file</p>
+<p>Either the basic response or parameter response has to be provided</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> &#8211; file to be uploaded</li>
+<li><strong>point_response_id</strong> &#8211; ID of the parameter response</li>
+<li><strong>basic_response_id</strong> &#8211; ID of the basic response</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recastapi.response">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-recastapi.response" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">recastapi.response package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-recastapi.response.get">recastapi.response.get module</a></li>
+<li><a class="reference internal" href="#module-recastapi.response.post">recastapi.response.post module</a></li>
+<li><a class="reference internal" href="#module-recastapi.response">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/recastapi.response.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christian Bora.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/recastapi.response.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

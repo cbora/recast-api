@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>recastapi package &mdash; recastapi 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="recastapi 0.1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="recastapi-package">
+<h1>recastapi package<a class="headerlink" href="#recastapi-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recastapi.analysis.html">recastapi.analysis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.analysis.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.analysis.html#module-recastapi.analysis.get">recastapi.analysis.get module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.analysis.html#module-recastapi.analysis.post">recastapi.analysis.post module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.analysis.html#module-recastapi.analysis">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recastapi.request.html">recastapi.request package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.request.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.request.html#module-recastapi.request.get">recastapi.request.get module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.request.html#module-recastapi.request.post">recastapi.request.post module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.request.html#module-recastapi.request">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recastapi.response.html">recastapi.response package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.response.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.response.html#module-recastapi.response.get">recastapi.response.get module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.response.html#module-recastapi.response.post">recastapi.response.post module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.response.html#module-recastapi.response">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recastapi.user.html">recastapi.user package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.user.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.user.html#module-recastapi.user.get">recastapi.user.get module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.user.html#module-recastapi.user.post">recastapi.user.post module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recastapi.user.html#module-recastapi.user">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recastapi.settings">
+<span id="recastapi-settings-module"></span><h2>recastapi.settings module<a class="headerlink" href="#module-recastapi.settings" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-recastapi.subscription">
+<span id="recastapi-subscription-module"></span><h2>recastapi.subscription module<a class="headerlink" href="#module-recastapi.subscription" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.subscription.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>analysis_id</em>, <em>subscription_type</em>, <em>description</em>, <em>requirements</em>, <em>notifications=[]</em>, <em>authoritative=False</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.subscription.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a subscription.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>analysis</strong> &#8211; ID of the analysis</li>
+<li><strong>subscription_type</strong> &#8211; provider or observer</li>
+<li><strong>description</strong> &#8211; description of subscription</li>
+<li><strong>requirements</strong> &#8211; requirements</li>
+<li><strong>notification</strong> &#8211; recast_requests or recast_responses or new subscribers</li>
+<li><strong>authoritative</strong> &#8211; True or False</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">JSON object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.subscription.my_subscriptions">
+<code class="descname">my_subscriptions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.subscription.my_subscriptions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists your subscriptions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="recastapi.subscription.unsubscribe">
+<code class="descname">unsubscribe</code><span class="sig-paren">(</span><em>subscription_id</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.subscription.unsubscribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes subscription.</p>
+<p>TO-DO: check if the user is allowed to delete the subscription</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>subscription_id</strong> &#8211; ID of the subscription</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-recastapi">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-recastapi" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="recastapi.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="recastapi.file_check">
+<code class="descname">file_check</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.file_check" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="recastapi.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>params=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="recastapi.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>params=None</em>, <em>files=None</em>, <em>json=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="recastapi.print_failure">
+<code class="descname">print_failure</code><span class="sig-paren">(</span><em>response</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.print_failure" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="recastapi.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em><span class="sig-paren">)</span><a class="headerlink" href="#recastapi.put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">recastapi package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-recastapi.settings">recastapi.settings module</a></li>
+<li><a class="reference internal" href="#module-recastapi.subscription">recastapi.subscription module</a></li>
+<li><a class="reference internal" href="#module-recastapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/recastapi.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Christian Bora.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/recastapi.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
